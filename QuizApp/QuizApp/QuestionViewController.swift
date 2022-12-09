@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UIViewController, UITableViewDataSource {
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -17,20 +17,37 @@ class QuestionViewController: UIViewController {
         return label
     }()
     
-    private var question: String = ""
+    public lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .red
+        return tableView
+    }()
     
-    convenience init(question: String) {
+    private var question: String = ""
+    private var options: [String] = []
+    
+    convenience init(question: String, options: [String]) {
         self.init()
         self.question = question
-        
+        self.options = options
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
         headerLabel.text = question
+        tableView.dataSource = self
         
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = options[indexPath.row]
+        return cell
+    }
     
 }
