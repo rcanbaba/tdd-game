@@ -15,6 +15,9 @@
 		B4EF4ACF294313F2002C487C /* QuizAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4ACE294313F2002C487C /* QuizAppUITestsLaunchTests.swift */; };
 		B4EF4ADC2943159B002C487C /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4ADB2943159B002C487C /* QuestionViewControllerTest.swift */; };
 		B4EF4ADE29431630002C487C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4ADD29431630002C487C /* QuestionViewController.swift */; };
+		B4EF4AE02945B1F7002C487C /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4ADF2945B1F7002C487C /* ResultsViewControllerTest.swift */; };
+		B4EF4AE22945B2D7002C487C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4AE12945B2D7002C487C /* ResultsViewController.swift */; };
+		B4EF4AE42945B95B002C487C /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF4AE32945B95B002C487C /* TableViewHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		B4EF4ACE294313F2002C487C /* QuizAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B4EF4ADB2943159B002C487C /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		B4EF4ADD29431630002C487C /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		B4EF4ADF2945B1F7002C487C /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
+		B4EF4AE12945B2D7002C487C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		B4EF4AE32945B95B002C487C /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 				B4EF4AB6294313F2002C487C /* LaunchScreen.storyboard */,
 				B4EF4AB9294313F2002C487C /* Info.plist */,
 				B4EF4ADD29431630002C487C /* QuestionViewController.swift */,
+				B4EF4AE12945B2D7002C487C /* ResultsViewController.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -110,7 +117,9 @@
 		B4EF4AC1294313F2002C487C /* QuizAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4EF4AE32945B95B002C487C /* TableViewHelpers.swift */,
 				B4EF4ADB2943159B002C487C /* QuestionViewControllerTest.swift */,
+				B4EF4ADF2945B1F7002C487C /* ResultsViewControllerTest.swift */,
 			);
 			path = QuizAppTests;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 				B4EF4AAC294313F1002C487C /* AppDelegate.swift in Sources */,
 				B4EF4AAE294313F1002C487C /* SceneDelegate.swift in Sources */,
 				B4EF4ADE29431630002C487C /* QuestionViewController.swift in Sources */,
+				B4EF4AE22945B2D7002C487C /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4EF4ADC2943159B002C487C /* QuestionViewControllerTest.swift in Sources */,
+				B4EF4AE42945B95B002C487C /* TableViewHelpers.swift in Sources */,
+				B4EF4AE02945B1F7002C487C /* ResultsViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
