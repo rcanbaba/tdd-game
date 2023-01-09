@@ -8,15 +8,9 @@
 import UIKit
 
 struct PresentableAnswer {
-    let isCorrect: Bool
-}
-
-class CorrectAnswerCell: UITableViewCell {
-    
-}
-
-class WrongAnswerCell: UITableViewCell {
-    
+    let question: String
+    let answer: String
+    let wrongAnswer: String?
 }
 
 class ResultsViewController: UIViewController, UITableViewDataSource {
@@ -46,8 +40,12 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         headerLabel.text = summary
+        view.backgroundColor = UIColor.red
+        tableView.dataSource = self
+        tableView.register(CorrectAnswerCell.self)
+        tableView.register(WrongAnswerCell.self)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +54,24 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let answer = answers[indexPath.row]
-        return answer.isCorrect ? CorrectAnswerCell() : WrongAnswerCell()
+        if answer.wrongAnswer == nil {
+            return correctAnswerCell(for: answer)
+        }
+        return wrongAnswerCell(for: answer)
     }
     
+    private func correctAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: CorrectAnswerCell.self)!
+        cell.questionLabel.text = answer.question
+        cell.answerLabel.text = answer.answer
+        return cell
+    }
+    
+    private func wrongAnswerCell(for answer: PresentableAnswer) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: WrongAnswerCell.self)!
+        cell.questionLabel.text = answer.question
+        cell.answerLabel.text = answer.answer
+        cell.wrongAnswerLabel.text = answer.wrongAnswer
+        return cell
+    }
 }
